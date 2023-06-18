@@ -30,8 +30,9 @@ const Step = () => {
       <p className='message'>Step{step}:{messages[step-1]} </p>
 
       <div className='buttons'>
-        <button style={{backgroundColor:'#7950f2',color:'#ffffff'}} onClick={handelPrevious}>Previous</button>
-        <button style={{backgroundColor:'#7950f2',color:'#ffffff'}} onClick={handelNext}>Next</button>
+        <Button bgColor='#7950f2' textColor="#fff" onClick={handelPrevious}><span>👈</span>Previous</Button>
+        <Button bgColor='#7950f2' textColor="#fff" onClick={handelNext} >Next<span>👉</span></Button>
+        
       </div>
     </div>)}
       </>
@@ -39,4 +40,9 @@ const Step = () => {
   
 }
 
+function Button({bgColor,textColor,onClick,children}){
+    return(
+      <button style={{backgroundColor:bgColor,color:textColor}} onClick={onClick}>{children}</button>
+    )
+}
 export default Step
